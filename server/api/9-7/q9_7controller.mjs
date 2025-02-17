@@ -1,4 +1,4 @@
-import { q9_7Model } from "./q9_7model.mjs"
+import { q9_7Model } from "./q9_7Model.mjs"
 const postq9_7 = async (req, res) => {
  const id = req.body.id
  const user_id = req.body.user_id
@@ -26,7 +26,7 @@ const getTwoq9_7 = async (req, res) => {
     res.send(JSON.stringify({ status: "success", data: result }))
    }
    const getAllq9_7 = async (req, res) => {
-    const result = await q9_7Model.selectAll()
+    const result = await q9_7model.selectAll()
     res.send(JSON.stringify({ status: "success", list: result }))
    }
 
@@ -53,7 +53,7 @@ const getTwoq9_7 = async (req, res) => {
     if (!id) {
     return res.send(JSON.stringify({ status: "error" }))
     }
-    const result = await sample2Model.deleteOne(id)
+    const result = await q9_7Model.deleteTwo(id)
     if (!result) {
     return res.send(JSON.stringify({ status: "not found" }))
     }
